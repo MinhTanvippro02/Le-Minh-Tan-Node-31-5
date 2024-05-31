@@ -1,0 +1,50 @@
+<div class="modal fade" id="updateProductModal-<%= product._id %>">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Update Product</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <form id="productForm" action="/api/v1/product/update-product/<%= product._id %>" method="post">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form
+                        <input type="text" class="form-control" id="name" name="name" value="<%= product.name %>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price:</label>
+                        <input type="number" class="form-control" id="price" name="price" value="<%= product.price %>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="oldPrice">Old Price:</label>
+                        <input type="number" class="form-control" id="oldPrice" name="oldPrice" value="<%= product.oldPrice %>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="thumbnail">Thumbnail:</label>
+                        <input type="text" class="form-control" id="thumbnail" name="thumbnail" value="<%= product.thumbnail %>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea class="form-control" id="description" name="description" required><%= product.description %></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="stock">Stock:</label>
+                        <input type="number" class="form-control" id="stock" name="stock" value="<%= product.stock %>" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
